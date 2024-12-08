@@ -13,6 +13,10 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.get("/", (req, res) => {
+    res.render("index.ejs"); // Assuming you're using EJS for templates
+  });
+  
 app.use('/users', userRoutes);
 app.use(errorHandler);
 
