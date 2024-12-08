@@ -2,15 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User List</title>
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
-    <h1>Users</h1>
-    <ul>
-        <% users.forEach(user => { %>
-            <li><%= user.name %> - <%= user.email %> - <%= user.age %></li>
-        <% }) %>
-    </ul>
-    <a href="/">Go Back</a>
+    <header>
+        <h1>All Users</h1>
+    </header>
+    <main>
+        <div class="user-list">
+            <% users.forEach(user => { %>
+                <div class="user-card">
+                    <h3><%= user.name %></h3>
+                    <p>Email: <%= user.email %></p>
+                    <p>Age: <%= user.age %></p>
+                    <!-- <a href="/edit/<%= user._id %>" class="btn">Edit</a> -->
+                </div>
+            <% }) %>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 User Management App</p>
+    </footer>
 </body>
 </html>
